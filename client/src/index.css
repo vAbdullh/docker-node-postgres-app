@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+body,
+html,
+#root {
+  @apply bg-[#111] text-white min-h-screen w-screen overflow-hidden;
+}

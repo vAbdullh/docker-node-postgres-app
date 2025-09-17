@@ -3,7 +3,7 @@ version: "3.9"
 services:
   postgres:
     build: ./db
-    container_name: motorcycles-db
+    container_name: postgres
     restart: unless-stopped
     environment:
       POSTGRES_DB: motorcycles
@@ -14,7 +14,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  pgadmin:
+  pgAdmin:
     image: dpage/pgadmin4
     container_name: pgadmin
     restart: unless-stopped
@@ -25,6 +25,18 @@ services:
       - "5050:80"
     depends_on:
       - postgres
+
+  client:
+    build: ./client
+    container_name: web-app
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app d
+      - ./media:/app/public/media
+    depends_on:
+      - postgres
+    restart: unless-stopped
 
 volumes:
   postgres_data:
