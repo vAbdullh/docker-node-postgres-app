@@ -16,6 +16,7 @@ This project demonstrates how multiple services communicate inside Docker contai
 
 ---
 
+
 ## 📦 Services
 
 | Service    | Description                |
@@ -89,3 +90,5 @@ Node.js API (api)  -->  PostgreSQL (postgres)
 
 - Multi-network setup: `privateNetwork` for backend+DB, `publicNetwork` for frontend API access.
 - Clean separation of services: DB, API, frontend, and DB management tool.
+
+> **Note:** This project is for practice purposes.
