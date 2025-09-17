@@ -1,13 +1,11 @@
 import http from 'node:http';
-import pkg from 'pg';
-
-const { Pool } = pkg;
+import { Pool } from 'pg';
 
 const PORT = 8080;
 
 // Create a PostgreSQL connection pool - Hardcoded in real app must be in the env file
 const pool = new Pool({
-	host: 'localhost',
+	host: 'postgres',
 	port: 5432,
 	user: 'user',
 	password: 'strongPassword',
